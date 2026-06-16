@@ -86,16 +86,16 @@
         } else if (Number(scorevalue) < 0 || Number(scorevalue) > 100) {
             alert('Score must be betewwn 1 and 10')
         } else {
-            if (scorevalue >= 80 && scorevalue <= 100) {
-                grade = 'A'
-            } else if (scorevalue >= 70 && scorevalue <= 89) {
-                grade = 'B'
-            } else if (scorevalue >= 60 && scorevalue <= 69) {
-                grade = 'C'
-            } else if (scorevalue >= 50 && scorevalue <= 59) {
-                grade = 'D'
-            } else if (scorevalue >= 0 && scorevalue <= 49) {
-                grade = 'E'
+            if (scorevalue >= 80) {
+                grade = 'A';
+            } else if (scorevalue >= 70) {
+                grade = 'B';
+            } else if (scorevalue >= 60) {
+                grade = 'C';
+            } else if (scorevalue >= 50) {
+                grade = 'D';
+            } else {
+                grade = 'E';
             }
 
             output.innerHTML = `Your Grade is ${grade}`
