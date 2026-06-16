@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Claculator</title>
+
+    <style></style>
+</head>
+
+<body>
+    <h1>Grade Calculator</h1>
+    <label>Enter your score: </label>
+    <input type="text" id="score">
+    <button onclick="calc()">Cick to see Grade</button>
+    <p id="output"></p>
+</body>
+
+</html>
+<script>
+
+    let score = document.getElementById('score')
+    let output = document.getElementById('output')
+
+    function calc() {
+        let grade
+        let scorevalue = score.value.trim()
+
+        if (scorevalue === '') {
+            alert('Input field is mandatory')
+        } else if (isNaN(scorevalue)) {
+            alert('Score must be a number')
+        } else if (Number(scorevalue) < 0 || Number(scorevalue) > 100) {
+            alert('Score must be betewwn 1 and 10')
+        } else {
+            if (scorevalue >= 80 && scorevalue <= 100) {
+                grade = 'A'
+            } else if (scorevalue >= 70 && scorevalue <= 89) {
+                grade = 'B'
+            } else if (scorevalue >= 60 && scorevalue <= 69) {
+                grade = 'C'
+            } else if (scorevalue >= 50 && scorevalue <= 59) {
+                grade = 'D'
+            } else if (scorevalue >= 0 && scorevalue <= 49) {
+                grade = 'E'
+            }
+
+            output.innerHTML = `Your Grade is ${grade}`
+
+        }
+
+
+        // let input = +score.value.trim()
+
+        // if (input === '') {
+        //     alert('Input is mandatory')
+        //     return
+        // }
+        // else if (isNaN(input)) {
+        //     alert('value must be a number')
+        // } else if (scorevalue < 0 || scorevalue > 100) {
+        //     alert('omo score is invalid o')
+        // }
+        // else {
+        //     if (score.value >= 80 && scorevalue <= 100) {
+        //         grade = 'A'
+        //     } else if (scorevalue >= 70 && scorevalue <= 89) {
+        //         grade = 'B'
+        //     } else if (scorevalue >= 60 && scorevalue <= 69) {
+        //         grade = 'C'
+        //     } else if (scorevalue >= 50 && scorevalue <= 59) {
+        //         grade = 'D'
+        //     } else if (scorevalue >= 0 && scorevalue <= 49) {
+        //         grade = 'E'
+        //     }
+
+        // }
+
+        // output.innerHTML`grade is ${grade}`
+
+    }
+</script>
